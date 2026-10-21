@@ -196,7 +196,7 @@ require 'inc/header.php';
     z-index: 2;
     width: min(100%, 900px);
     margin: 0 auto;
-    transform: translateY(18px);
+    top: 80px;
 }
 
 .hero h1 {
@@ -414,21 +414,24 @@ require 'inc/header.php';
 
 .news-grid {
     display: grid;
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 26px;
+    align-items: stretch;
 }
 
 .news-card {
+    display: flex;
+    flex-direction: column;
     background: white;
-    border-radius: 16px;
+    border-radius: 18px;
     overflow: hidden;
 
     box-shadow:
-        0 5px 18px rgba(0,0,0,.08);
+        0 8px 24px rgba(23,50,77,.09);
 
-    border: 1px solid rgba(0,0,0,.04);
+    border: 1px solid rgba(23,50,77,.07);
 
     transition:
         transform .25s ease,
@@ -444,13 +447,14 @@ require 'inc/header.php';
 
 .news-card img {
     width: 100%;
-    height: 210px;
+    height: 220px;
     object-fit: cover;
     display: block;
+    background: #e9e4d9;
 }
 
 .news-no-image {
-    height: 210px;
+    height: 220px;
 
     background:
         linear-gradient(
@@ -463,25 +467,29 @@ require 'inc/header.php';
     align-items: center;
     justify-content: center;
 
-    color: #777;
+    color: #687684;
     font-size: 14px;
+    letter-spacing: .2px;
 }
 
 .news-content {
-    padding: 22px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 23px 24px 25px;
 }
 
 .news-content h3 {
-    margin: 0 0 9px;
+    margin: 0 0 8px;
     color: #17324d;
-    font-size: 20px;
+    font-size: 21px;
     line-height: 1.4;
 }
 
 .news-date {
     font-size: 13px;
-    color: #999;
-    margin-bottom: 12px;
+    color: #8a7350;
+    margin-bottom: 13px;
 }
 
 .news-excerpt {
@@ -492,7 +500,9 @@ require 'inc/header.php';
 
 .news-link {
     display: inline-block;
-    margin-top: 16px;
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: 16px;
 
     color: #17324d;
     font-weight: bold;
@@ -588,6 +598,12 @@ require 'inc/header.php';
     background: #f0eadd;
 }
 
+.home-news {
+    padding: 30px 24px 34px;
+    border-radius: 24px;
+    background: #eaf0f3;
+}
+
 .home-about .about-box p {
     max-width: 900px;
     margin: 0;
@@ -645,7 +661,13 @@ require 'inc/header.php';
 .home-links {
     padding: 30px 24px 34px;
     border-radius: 24px;
-    background: #f2eee5;
+    background: #eaf0f3;
+}
+
+.home-info {
+    padding: 30px 16px 34px;
+    border-radius: 24px;
+    background: #eaf0f3;
 }
 
 .home-links .quick-icon {
@@ -1212,7 +1234,7 @@ require 'inc/header.php';
      BERITA TERKINI
      ========================================================= -->
 
-<section class="section home-about">
+<section class="section home-news">
 
     <div class="section-title">
 
@@ -1414,7 +1436,7 @@ require 'inc/header.php';
      MENU CEPAT
      ========================================================= -->
 
-<section class="section">
+<section class="section home-info">
 
     <div class="section-title">
 
